@@ -1,0 +1,5 @@
+# Bambuddy Appliance - https://get.bambuddy.cool
+User-agent: *
+Allow: /
+
+Sitemap: https://get.bambuddy.cool/sitemap.xml
