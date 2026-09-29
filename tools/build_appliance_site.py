@@ -5,6 +5,9 @@ product it sells and nothing else. So the subdomain gets its own copy of the
 appliance page and the legal pages, with a header and footer that carry only the
 appliance, and every other link pointing back to bambuddy.cool.
 
+It also writes pay.html, the page Paddle opens checkouts on (Paddle's "default
+payment link"). The Paddle settings for it are in PADDLE below.
+
 Run after editing appliance.html, privacy-policy.html or legal-notice.html:
 
     python3 tools/build_appliance_site.py
@@ -27,6 +30,13 @@ PAGES = {
     "appliance.html": "index.html",
     "privacy-policy.html": "privacy-policy.html",
     "legal-notice.html": "legal-notice.html",
+}
+
+# Paddle checkout. The client-side token is public by design -- it ends up in the
+# page source either way. The API key and the webhook secret never go here.
+PADDLE = {
+    "environment": "sandbox",  # "sandbox" or "production"
+    "token": "test_25eddac35c0daf9d5a49937875b",  # client-side token: test_... for sandbox, live_... for production
 }
 
 # Pages that exist on the subdomain, so relative links to them stay relative.
@@ -143,10 +153,96 @@ def build(source: str, target: str) -> None:
     open(os.path.join(OUT, target), "w").write(head + HEADER + main + FOOTER + tail)
 
 
+PAY_MAIN = """<main>
+    <section class="page-head">
+      <div class="shell">
+        <p class="label label-signal">Checkout</p>
+        <h1 id="pay-title">Opening secure checkout&hellip;</h1>
+      </div>
+    </section>
+
+    <section class="band-tight">
+      <div class="shell">
+        <div class="article" style="max-width: 78ch;">
+        <p class="lead" id="pay-text">The payment form is provided by Paddle.com, our online reseller and the Merchant of Record for all our orders. It opens on top of this page.</p>
+        <p id="pay-fallback">If nothing opens, check that your browser is not blocking scripts from cdn.paddle.com, or go back to the <a href="/#pricing">pricing</a> and try again. Questions: <a href="mailto:support@bambuddy.cool">support@bambuddy.cool</a>.</p>
+        <p class="svc-note">By paying you agree to the <a href="terms.html">subscription terms</a>. Full refund within 14 days, no reason needed: <a href="refund-policy.html">refund policy</a>.</p>
+        </div>
+      </div>
+    </section>
+  </main>"""
+
+PAY_SCRIPT = """
+  <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+  <script>
+  (function () {
+    var config = __PADDLE__;
+    var title = document.getElementById('pay-title');
+    var text = document.getElementById('pay-text');
+    var params = new URLSearchParams(window.location.search);
+    var transaction = params.get('_ptxn');
+    var price = params.get('price');
+
+    function show(heading, body) {
+      title.textContent = heading;
+      text.textContent = body;
+    }
+
+    if (!config.token || typeof Paddle === 'undefined') {
+      show('Checkout is not available right now',
+        'Please try again later, or write to support@bambuddy.cool.');
+      return;
+    }
+    if (!transaction && !/^pri_[a-z0-9]{26}$/.test(price || '')) {
+      show('Nothing to pay here',
+        'Choose a plan on the pricing section to start a checkout.');
+      return;
+    }
+
+    if (config.environment === 'sandbox') Paddle.Environment.set('sandbox');
+    Paddle.Initialize({
+      token: config.token,
+      checkout: { settings: { displayMode: 'overlay', theme: 'dark', locale: 'en' } },
+      eventCallback: function (event) {
+        if (event.name === 'checkout.completed') {
+          show('Thank you',
+            'Your order is complete. Your licence key and the download link arrive by email within a few minutes.');
+        } else if (event.name === 'checkout.closed') {
+          show('Checkout closed', 'Nothing was charged. You can go back to the pricing and start again.');
+        }
+      }
+    });
+
+    // With _ptxn in the URL Paddle.js opens that transaction by itself.
+    if (!transaction) Paddle.Checkout.open({ items: [{ priceId: price, quantity: 1 }] });
+  })();
+  </script>
+"""
+
+
+def build_pay() -> None:
+    """pay.html: the legal notice's head and chrome around the checkout page."""
+    import json
+
+    html = open(os.path.join(OUT, "legal-notice.html")).read()
+    head = html[: html.index("<main>")]
+    tail = html[html.index("</main>") + len("</main>") :]
+
+    head = head.replace(f"{SUB}/legal-notice.html", f"{SUB}/pay.html")
+    head = head.replace("Legal Notice - Bambuddy", "Checkout - Bambuddy Appliance")
+    head = re.sub(r'content="Legal notice and provider identification[^"]*"', 'content="Checkout for the Bambuddy Appliance subscription."', head)
+    head = head.replace('<meta name="viewport"', '<meta name="robots" content="noindex">\n  <meta name="viewport"', 1)
+
+    script = PAY_SCRIPT.replace("__PADDLE__", json.dumps(PADDLE))
+    tail = tail.replace("</body>", script + "</body>", 1)
+    open(os.path.join(OUT, "pay.html"), "w").write(head + PAY_MAIN + tail)
+
+
 def main() -> None:
     for source, target in PAGES.items():
         build(source, target)
-    print(f"built {len(PAGES)} pages into {OUT}")
+    build_pay()
+    print(f"built {len(PAGES) + 1} pages into {OUT}")
 
 
 if __name__ == "__main__":
