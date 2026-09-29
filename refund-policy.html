@@ -3,22 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="What Bambuddy users say about running a self-hosted print farm: community reviews, moderated but not curated.">
+  <meta name="description" content="Refund policy for the Bambuddy Appliance subscription: full refund within 14 days, processed by Paddle.">
 
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://bambuddy.cool/reviews.html">
-  <meta property="og:title" content="User reviews - Bambuddy">
-  <meta property="og:description" content="What Bambuddy users say about running a self-hosted print farm: community reviews, moderated but not curated.">
+  <meta property="og:url" content="https://bambuddy.cool/refund-policy.html">
+  <meta property="og:title" content="Refund Policy - Bambuddy">
+  <meta property="og:description" content="Refund policy for the Bambuddy Appliance subscription: full refund within 14 days, processed by Paddle.">
   <meta property="og:image" content="https://bambuddy.cool/assets/screenshots/printers.png">
   <meta property="og:site_name" content="Bambuddy">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="User reviews - Bambuddy">
-  <meta name="twitter:description" content="What Bambuddy users say about running a self-hosted print farm: community reviews, moderated but not curated.">
+  <meta name="twitter:title" content="Refund Policy - Bambuddy">
+  <meta name="twitter:description" content="Refund policy for the Bambuddy Appliance subscription: full refund within 14 days, processed by Paddle.">
   <meta name="twitter:image" content="https://bambuddy.cool/assets/screenshots/printers.png">
 
-  <title>User reviews - Bambuddy</title>
-  <link rel="canonical" href="https://bambuddy.cool/reviews.html">
+  <title>Refund Policy - Bambuddy</title>
+  <link rel="canonical" href="https://bambuddy.cool/refund-policy.html">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
@@ -85,75 +85,41 @@
   <main>
     <section class="page-head">
       <div class="shell">
-        <p class="label label-signal">Reviews</p>
-        <h1>What users actually say.</h1>
-        <p class="prose">
-          Hear from the community about their experience with Bambuddy. Reviews are
-          moderated, but not curated &mdash; the critical ones stay up too.
-        </p>
+        <p class="label label-signal">Legal</p>
+        <h1>Refund Policy</h1>
       </div>
     </section>
 
     <section class="band-tight">
       <div class="shell">
-        <div id="review-stats"></div>
-      </div>
-    </section>
-
-    <section class="band-tight">
-      <div class="shell">
-        <div class="reviews-grid" id="all-reviews-grid"></div>
-      </div>
-    </section>
-
-    <section class="band band-ruled band-raised">
-      <div class="shell">
-        <div class="masthead masthead-sub">
-          <h2>Share your experience</h2>
-          <p>Let others know how Bambuddy is working for you.</p>
-        </div>
-        <form id="review-form" class="review-form">
-        <div class="form-group">
-        <label class="form-label">Your Rating</label>
-        <div class="star-selector">
-        <button type="button" class="star-select-btn" data-value="1" aria-label="1 star">
-        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        </button>
-        <button type="button" class="star-select-btn" data-value="2" aria-label="2 stars">
-        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        </button>
-        <button type="button" class="star-select-btn" data-value="3" aria-label="3 stars">
-        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        </button>
-        <button type="button" class="star-select-btn" data-value="4" aria-label="4 stars">
-        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        </button>
-        <button type="button" class="star-select-btn" data-value="5" aria-label="5 stars">
-        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        </button>
-        </div>
-        <input type="hidden" id="review-rating" name="rating" value="">
-        </div>
-        <div class="form-group">
-        <label class="form-label" for="review-text">Your Review</label>
-        <textarea id="review-text" name="review_text" class="form-textarea" rows="5" minlength="10" maxlength="2000" placeholder="Share your experience with Bambuddy (at least 10 characters)..." required></textarea>
-        </div>
-        <div class="form-group">
-        <label class="form-label" for="review-name">Name (optional)</label>
-        <input type="text" id="review-name" name="reviewer_name" class="form-input" placeholder="Anonymous" maxlength="100">
-        </div>
-        <button type="submit" class="btn btn-primary review-submit-btn">Submit Review</button>
-        <p class="review-form-disclaimer">Reviews are moderated before appearing on the site.</p>
-        </form>
-      </div>
-    </section>
-
-    <section class="band-tight">
-      <div class="shell">
-        <div class="hero-actions">
-          <a href="https://demo.bambuddy.cool" class="btn btn-primary" target="_blank" rel="noopener">Try the live demo</a>
-          <a href="installation.html" class="btn btn-ghost">Install Bambuddy</a>
-          <a href="press.html" class="btn btn-ghost">Read the press coverage</a>
+        <div class="article" style="max-width: 78ch;">
+        <p class="lead">Full refund within 14 days, no reason needed.</p>
+        <h2>Who handles refunds</h2>
+        <p>The Bambuddy Appliance subscription is sold through our online reseller Paddle.com, which is the Merchant of Record for all our orders. Paddle takes the payment, issues the invoice and pays out every refund, always to the payment method used for the purchase.</p>
+        <h2>14-day money-back promise</h2>
+        <p>If the Appliance is not what you wanted, ask for your money back within <strong>14 days</strong> of your first purchase or of a renewal charge. You get the full price back. You do not have to give a reason, and it does not matter whether you have already downloaded or installed the image.</p>
+        <p>To ask for a refund, do one of the following and include your order number:</p>
+        <ul>
+        <li>use the link in your Paddle receipt email, or go to <a href="https://paddle.net">paddle.net</a></li>
+        <li>email <a href="mailto:support@bambuddy.cool">support@bambuddy.cool</a></li>
+        </ul>
+        <h2>What happens after a refund</h2>
+        <ul>
+        <li>Your licence key is revoked, and updates and support for the Appliance end.</li>
+        <li>The Appliance's admin panel stops accepting management actions and says why. Status, logs and the support bundle stay readable.</li>
+        <li><strong>Bambuddy, your printers and your print jobs keep running.</strong> Bambuddy itself is free software under the AGPL and never depended on the subscription; you can keep using it or <a href="installation.html">install it yourself</a> at no cost.</li>
+        </ul>
+        <h2>After the 14 days</h2>
+        <p>You can cancel at any time so that the subscription does not renew. Cancel through the link in your Paddle receipt, at <a href="https://paddle.net">paddle.net</a>, or by email to <a href="mailto:support@bambuddy.cool">support@bambuddy.cool</a>. The Appliance keeps running after the subscription ends; only updates and support stop.</p>
+        <p>If you bought as a consumer and your subscription has already renewed, the contract ends one month after you cancel, and the unused part of the renewal is refunded pro rata.</p>
+        <p>Beyond that, we refund a subscription period that has already started only where there is a material defect we cannot fix, or where the law requires it.</p>
+        <h2>Your statutory rights</h2>
+        <p>This promise is in addition to your rights under the law, including the 14-day right of withdrawal for consumers in the EU, the EEA, Switzerland and the UK. Nothing here limits them. The full terms are in the <a href="terms.html">subscription terms</a>, Section 12, and in <a href="https://www.paddle.com/legal/buyer-terms">Paddle's Buyer Terms</a>.</p>
+        <h2>Services not sold through Paddle</h2>
+        <p>Migrating an existing Bambuddy installation onto the Appliance, service contracts for running Bambuddy, and development work are not sold through Paddle. They are agreed and invoiced directly, and their own agreement covers cancellation and payment.</p>
+        <h2>Contact</h2>
+        <p>Martin Ziegler, Warschauer Str. 12, 10243 Berlin, Germany &middot; <a href="mailto:support@bambuddy.cool">support@bambuddy.cool</a></p>
+        <p class="svc-note">Last updated: September 29, 2026</p>
         </div>
       </div>
     </section>
@@ -227,6 +193,6 @@
   </footer>
 
   <script src="js/system.js" defer></script>
-  <script src="js/reviews.js" defer></script>
+
 </body>
 </html>
