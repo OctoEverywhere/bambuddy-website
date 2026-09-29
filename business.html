@@ -434,6 +434,42 @@
           Just want to support the project instead?
           <a href="sponsors.html?from=business-page" class="link">See the sponsor tiers</a>.
         </p>
+
+        <hr style="margin: 2.5rem 0 1.75rem; border: 0; border-top: 1px solid var(--rule);">
+
+        <div class="panel" style="max-width: 720px;">
+          <h3>Selling hardware, and want to include the appliance?</h3>
+          <p>
+            We do not sell hardware and we are not looking for resellers. But if you already
+            build and sell Raspberry&nbsp;Pi kits, shipping one with a prepaid subscription is
+            something we are open to. The <a href="https://get.bambuddy.cool/" class="link">Bambuddy Appliance</a> page
+            has the details; tell us about your shop.
+          </p>
+          <div style="margin-top: 1.25rem;">
+            <form class="lead-form" data-context="business" novalidate>
+              <input type="hidden" name="interest" value="reseller">
+              <div class="form-group">
+                <label class="form-label" for="res-region">Where is your shop?</label>
+                <input class="form-input" id="res-region" name="region" type="text" required autocomplete="country-name" placeholder="Country / region">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="res-email">Your email</label>
+                <input class="form-input" id="res-email" name="email" type="email" required autocomplete="email" placeholder="you@yourshop.com">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="res-message">Tell us about your shop <span class="form-hint">(optional)</span></label>
+                <textarea class="form-textarea" id="res-message" name="message" placeholder="What you sell, roughly how many kits a month you'd expect, and anything else useful."></textarea>
+              </div>
+              <div class="lead-hp" aria-hidden="true">
+                <label>Do not fill this in <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+              </div>
+              <button type="submit" class="btn btn-ghost lead-submit-btn" data-label="Start a conversation">
+                <span class="lead-btn-label">Start a conversation</span>
+              </button>
+              <p class="lead-status" role="status" aria-live="polite"></p>
+            </form>
+          </div>
+        </div>
       </div>
     </section>
 
