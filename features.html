@@ -100,6 +100,8 @@
     <section class="band-tight">
       <div class="shell">
         <nav class="toc" aria-label="On this page">
+          <a href="#access-control">Access Control</a>
+          <a href="#billing">Billing &amp; Cost Centers</a>
           <a href="#proxy-mode">Virtual Printer Proxy Mode</a>
           <a href="#integrated-slicing">Integrated Slicing</a>
           <a href="#print-management">Print Management</a>
@@ -118,10 +120,12 @@
           <a href="#statistics">Statistics Dashboard</a>
           <a href="#camera">Camera Streaming</a>
           <a href="#ams">AMS & Humidity Monitoring</a>
+          <a href="#inventory">Spool Inventory</a>
           <a href="#printer-control">Printer Control</a>
           <a href="#energy">Energy Tracking</a>
           <a href="#backup">Backup & Restore</a>
           <a href="#authentication">Optional Authentication</a>
+          <a href="#connected-apps">Connected Apps &amp; Announcements</a>
           <a href="#file-manager">File Manager</a>
           <a href="#system-info">System Info</a>
           <a href="#mobile">Mobile Access (PWA)</a>
@@ -130,10 +134,47 @@
     </section>
 
 
+    <section class="band-tight" id="access-control">
+      <div class="shell">
+        <div class="masthead masthead-sub">
+          <p class="label label-signal">New</p>
+          <h2>Access Control</h2>
+        </div>
+        <div class="article" style="max-width: 82ch;">
+          <p><strong>Share one Bambuddy between teams, classes and staff.</strong> Permissions decide <em>what</em> a user may do; printer access decides <em>on which printers</em>, and the review gate decides whether a job may start before staff have looked at it. Built for schools, FabLabs, labs and print farms.</p>
+          <ul class="ticks">
+            <li><strong>Printer Access per Group</strong> <p>Limit a group to single printers or to <strong>whole locations</strong> &mdash; a location covers every printer in it, including printers added there later. Members of a limited group see and control only their printers: the dashboard, cameras, queue, archives, projects, statistics, print log, maintenance, smart plugs, spool assignments and live updates all leave the others out. Users in no limited group keep every printer, so nothing changes until you limit a group; administrators always see everything.</p></li>
+            <li><strong>Printer Access Page</strong> <p>Settings &rarr; Authentication &rarr; Printer access, built for large fleets: search and filter by location, model and access, tick or untick everything the filters leave, and work <strong>by group</strong> or <strong>by printer</strong> (who reaches this printer, and which users see every printer). Changes are collected and saved together. <strong>Who has access</strong> in a printer card's menu jumps straight to that printer.</p></li>
+            <li><strong>Access Follows Everything</strong> <p>API keys, camera stream links, Cam Wall and overlay tokens reach only the printers of whoever created them. A queued &ldquo;Any &lt;model&gt;&rdquo; job only lands on a printer its owner may use, and a job pinned to a printer that was taken away waits with the reason shown.</p></li>
+            <li><strong>Jobs Wait for Staff Review</strong> <p>A new permission, <strong>Print Without Review</strong>, decides who may start prints directly. Users without it can still queue, but every job they queue waits with a <strong>Waiting for review</strong> badge until a reviewer starts it &mdash; the print dialog tells them so. It covers every way a job is queued: the print dialog, the File Manager, batches, pipelines, API keys and the webhook. On upgrade, existing groups keep their current behaviour until an admin takes the permission away.</p></li>
+            <li><strong>Students See Only Their Own</strong> <p>Combine the review gate with the existing &ldquo;own&rdquo; read permissions and students see only their own jobs and files, while staff see and release everything.</p></li>
+          </ul>
+          <p><a href="http://wiki.bambuddy.cool/features/authentication/#printer-access" class="btn btn-quiet" target="_blank" rel="noopener">Read the Full Guide <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></p>
+        </div>
+      </div>
+    </section>
+    <section class="band-tight" id="billing">
+      <div class="shell">
+        <div class="masthead masthead-sub">
+          <p class="label label-signal">New</p>
+          <h2>Billing &amp; Cost Centers</h2>
+        </div>
+        <div class="article" style="max-width: 82ch;">
+          <p><strong>Know whose budget a print came out of.</strong> For labs charging research groups, makerspaces with member accounts and departments splitting machine time between projects. Entirely optional and off by default.</p>
+          <ul class="ticks">
+            <li><strong>Cost Centers</strong> <p>A budget somebody can print against: a team, a course, a customer, a grant. Every user also gets a private one automatically, and shared centers have members with a per-member <em>can print</em> flag.</p></li>
+            <li><strong>Total or Monthly Budgets</strong> <p>Give a center a fixed pot or a monthly budget. The budget is checked when a job is queued, including what is already reserved for prints still waiting, so ten queued jobs can't each slip past a check only the last would fail. A center without a budget is unlimited, not blocked.</p></li>
+            <li><strong>Charged from What Was Actually Used</strong> <p>The print dialog shows an estimate; the charge is written when the print ends, from the measured cost. A print stopped half way is charged for the filament it used, and a job is never charged twice.</p></li>
+            <li><strong>Finance Page</strong> <p>Users see their own balance and ledger. Administrators manage cost centers, filter the whole ledger, record deposits and withdrawals, and add manual charges for jobs that happened outside Bambuddy.</p></li>
+            <li><strong>Printer Kill Switch</strong> <p>Optional: stop prints sent straight to the printer from Bambu Studio or Handy, so billing can't be bypassed. Off by default, with an alert and a notification when it acts.</p></li>
+          </ul>
+          <p><a href="http://wiki.bambuddy.cool/features/billing/" class="btn btn-quiet" target="_blank" rel="noopener">Read the Full Guide <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></p>
+        </div>
+      </div>
+    </section>
     <section class="band-tight" id="proxy-mode">
       <div class="shell">
         <div class="masthead masthead-sub">
-          <p class="label label-signal">New in 0.1.7</p>
           <h2>Virtual Printer Proxy Mode</h2>
         </div>
         <div class="article" style="max-width: 82ch;">
@@ -156,7 +197,6 @@
     <section class="band-tight" id="integrated-slicing">
       <div class="shell">
         <div class="masthead masthead-sub">
-          <p class="label label-signal">New &mdash; Top Feature</p>
           <h2>Integrated Slicing</h2>
         </div>
         <div class="article" style="max-width: 82ch;">
@@ -164,14 +204,18 @@
           <p><strong>How it works:</strong> Bring up the optional <code>slicer-api/</code> Compose stack with <code>docker compose up -d</code>. In Bambuddy, go to Settings &rarr; Workflow &rarr; Slicer, toggle <em>Use Slicer API</em> on, and paste the sidecar URL. The Slice button now appears on file cards. Click it &mdash; the modal closes immediately and a toast tracker follows the job until the sliced <code>.gcode.3mf</code> lands in the library, ready for the plate picker, AMS mapper, and dispatch.</p>
           <ul class="ticks">
             <li><strong>One-click Slice button everywhere</strong> <p>Slice from File Manager, Archives, MakerWorld imports, and the print queue. Result lands in the library with embedded thumbnail, ready for the plate picker, AMS mapper, and dispatch.</p></li>
-            <li><strong>Bambu Studio Preset Bundles (.bbscfg)</strong> <p>Import a Printer Preset Bundle once, then pick its curated printer + process + filament triplet from a bundle dropdown for every slice. Repeat slicing skips the JSON profile re-upload entirely.</p></li>
+            <li><strong>Full Print Settings, per Slice</strong> <p>A <strong>Process settings</strong> panel opens the whole print-parameter tree &mdash; the same pages, groups and Simple / Advanced / Expert tiers Bambu Studio and OrcaSlicer show, extracted from the slicer's own sources. Bump the walls, drop the infill, switch on supports: changed values are marked and revertible, search covers every page, and anything you don't touch stays as your preset defines it.</p></li>
+            <li><strong>Slice as Designed</strong> <p>Keep a MakerWorld designer's own settings: when your printer matches the one the file was made for, <strong>Use the file's built-in settings</strong> slices with the author's walls, infill and filaments. Or keep only some of them &mdash; the settings the designer changed show up against their options, marked <em>from file</em>, ready to tick onto your own preset.</p></li>
+            <li><strong>Auto-Orient &amp; Auto-Arrange</strong> <p>The same layout passes as Bambu Studio's buttons, run before the slice: turn each object onto the side that prints best, and lay objects out so they no longer overlap.</p></li>
+            <li><strong>Combine STLs onto One Plate</strong> <p>Select several STLs, or one STL several times, in the File Manager and <strong>Combine to 3MF</strong>. The new 3MF opens in the Slice dialog with auto-arrange already ticked &mdash; no desktop slicer needed to build the plate.</p></li>
+            <li><strong>Filament Colour per Slot</strong> <p>Each filament row carries an editable colour swatch, pre-filled from the colour the file was designed with, so thumbnails and the AMS mapping show the colour you'll actually print.</p></li>
             <li><strong>Slicer Pipelines &mdash; save a recipe once, apply it in one click</strong> <p>Capture the Slice modal's printer + process + filament + bed-type combination as a named, reusable pipeline. Apply it to any file from File Manager, Archives, or MakerWorld with one click &mdash; no re-picking the triplet. Pipelines can target a specific printer or a printer <em>class</em> (any X1C / any H2D), slice once and dispatch up to N copies, and fan copies out across the matching printers in parallel (spread / single-printer / first-N strategies). Live runs dashboard on the Print Queue's Pipelines tab tracks every run with colour-coded status badges, per-copy detail on expand, cancel + retry-failed buttons on in-flight runs, and a clear-log control that only deletes terminal runs.</p></li>
             <li><strong>Per-AMS-slot filament dropdowns</strong> <p>Multi-color plates render one filament dropdown per AMS slot the print actually uses, each labelled <code>Filament N (PLA)</code> with a colour swatch and auto-matched against your imported / cloud / standard presets by type and colour.</p></li>
             <li><strong>Multi-plate plate picker</strong> <p>Multi-plate 3MFs open a plate picker first; the filament list and dropdown shape adapt to the picked plate's actual usage. Per-plate filament discovery is cached so opening the modal a second time on the same plate is instant.</p></li>
             <li><strong>Re-slice for any printer &mdash; including across nozzle classes</strong> <p>A 3MF authored for one printer model can be re-sliced for another &mdash; pick the target in the Slice modal and the slicer regenerates G-code for its bed, kinematics, and nozzle count. Cross-class re-slices (single-nozzle X1C / P1S / A1 / P2S onto a dual-nozzle H2D / H2D Pro and vice versa) just work too: Bambuddy detects the class change and auto-arranges objects so they land safely on the target's bed and clear the H2D's per-nozzle dead zones. MakerWorld imports authored for any printer slice cleanly on yours.</p></li>
             <li><strong>Slice all plates at once</strong> <p>Multi-plate projects &mdash; parted statues, multi-part kits, calibration test stacks &mdash; get a &ldquo;Slice all N plates&rdquo; toggle in the Slice modal. One click produces a single <code>.gcode.3mf</code> with every plate's G-code inside, ready to send to the printer. The toast shows &ldquo;Plate 2 of 5 &mdash; Generating G-code (47%)&rdquo; as it works through them, and Bambuddy handles the per-plate-then-merge dance for cross-class slice-all transparently.</p></li>
             <li><strong>Background jobs with toast tracker</strong> <p>Long slices don't pin the modal &mdash; the job tracker follows the slice from queued to completed across pages. Library / archives lists refresh automatically when the result lands.</p></li>
-            <li><strong>Headless-friendly</strong> <p>Runs on a NAS, mini-PC, or RPi 5 without a desktop slicer install. Sidecar is a self-contained Docker Compose stack &mdash; <code>docker compose up -d</code> and the Slice button appears in Bambuddy.</p></li>
+            <li><strong>Headless-friendly</strong> <p>Runs on a NAS or mini-PC without a desktop slicer install. The sidecar ships as pre-built images on GHCR and Docker Hub in a self-contained Docker Compose stack &mdash; <code>docker compose up -d</code> and the Slice button appears in Bambuddy. It doesn't have to run on the Bambuddy host: point Bambuddy at a sidecar on any x86_64 machine. ARM64 hosts (Raspberry Pi, Apple Silicon) can run it under emulation as an experimental option.</p></li>
             <li><strong>OrcaSlicer or Bambu Studio</strong> <p>Pick your preferred slicer in Settings &rarr; Workflow. Both ship as drop-in services with the same API surface, so you can switch any time.</p></li>
             <li><strong>Stays opt-in</strong> <p>If you don't run the sidecar, all "Open in Slicer" flows continue to use the existing URI-scheme handoff to your desktop slicer, unchanged. Turning it on adds the Slice button without taking anything away.</p></li>
           </ul>
@@ -198,7 +242,8 @@
             <li><strong>Embedded GCode Viewer</strong> <p>3D-preview any archived print directly in Bambuddy — click the 3D-preview badge on an archive card to open the full-layer viewer. Multi-plate archives surface a plate picker with thumbnails; bed size auto-matches the printer the file was sliced for (H2D, X1C, P1S, A1, etc.) without any configuration.</p></li>
             <li><strong>Metadata Preservation</strong> <p>Print settings, materials, and slicer configurations are stored with each file.</p></li>
             <li><strong>Per-archive Print Log</strong> <p>Each archive tracks every individual print of that file. An orange <code>N prints</code> badge appears on the card whenever a model has been printed more than once; click it for the full run-by-run history with date, status, duration, filament used, cost, and failure reason. Reprints add new rows instead of overwriting the source archive's data — a 100 g successful print stays visible alongside a 10 g failed reprint, and Quick Stats correctly sum to 110 g across both events.</p></li>
-            <li><strong>Global Print Log</strong> <p>Chronological table view of all print activity across every printer. Search and filter by printer, user, status, or date range. Colored status badges show completed, failed, stopped, cancelled, and skipped prints at a glance. Includes duration and filament info. Log data is separate from archives — clearing the log never deletes your archived files.</p></li>
+            <li><strong>Global Print Log</strong> <p>Chronological table view of all print activity across every printer. Search and filter by printer, user, status, or date range. Colored status badges show completed, failed, stopped, cancelled, and skipped prints at a glance. Includes duration and the filament used per run, with a choice of columns. Log data is separate from archives — clearing the log never deletes your archived files.</p></li>
+            <li><strong>Post-Print Outcome Confirmation</strong> <p>The printer only knows a print <em>completed</em>; you know whether the part is good. Turn on <strong>Ask for Outcome</strong> per print or as a default, and a finished print asks for a Good / Reject verdict &mdash; from a dialog with the finish photo, right on the printer card, or with one tap from ntfy or Telegram (or a 👍 / 👎 reaction on the Telegram message). Not ready to decide? The archive keeps an <strong>outcome?</strong> badge and the Archives page an <strong>Unconfirmed</strong> filter.</p></li>
             <li><strong>Bambu Cloud Sync</strong> <p>Optional integration with Bambu Cloud profiles for seamless workflow.</p></li>
           </ul>
           <div class="shot"><img src="assets/screenshots/archives.png" alt="Bambuddy Archives - Print management interface with 3D preview" loading="lazy"></div>
@@ -212,7 +257,7 @@
           <h2>3D Visualization</h2>
         </div>
         <div class="article" style="max-width: 82ch;">
-          <p>Interactive Three.js-powered model viewer for inspecting prints before sending to your printer.</p>
+          <p>Interactive 3D viewer for inspecting prints before sending them to your printer. Sliced G-code is drawn with the same renderer OrcaSlicer uses for its own preview, so extrusions are solid volumes and the print reads the way it does on the desktop.</p>
           <ul class="ticks">
             <li><strong>360-Degree Rotation</strong> <p>Inspect models from every angle with smooth mouse controls.</p></li>
             <li><strong>Zoom & Pan</strong> <p>Get detailed views of complex geometry and fine features.</p></li>
@@ -233,7 +278,7 @@
           <p>Keep track of your entire printer fleet with live status updates and comprehensive analytics.</p>
           <ul class="ticks">
             <li><strong>WebSocket Live Updates</strong> <p>Instant status changes without page refresh via persistent connections.</p></li>
-            <li><strong>HMS Error Tracking, Actions & Notifications</strong> <p>Monitor Health Management System errors with human-readable descriptions (853 error codes translated). <strong>One-click actions:</strong> the same Resume, Stop, Continue, Retry, Check Assistant, and Don't Remind Me buttons BambuStudio shows are rendered under each error &mdash; click and the matching MQTT command goes back to the printer, so you can clear a paused-print dialog from your phone instead of walking to the device. Action labels translated in all 11 supported locales. Clear stale errors directly from the UI after print cancellation or transient events. A red "Problem" counter in the status bar highlights printers with active HMS errors. Compact-mode status pips turn red for fatal/serious errors or amber for warnings. Progress bars turn amber when paused. Status sorting prioritizes printers with HMS errors at the top. Get instant push notifications for printer errors including AMS issues, nozzle problems, and more.</p></li>
+            <li><strong>HMS Error Tracking, Actions & Notifications</strong> <p>Monitor Health Management System errors with human-readable descriptions (853 error codes translated). <strong>One-click actions:</strong> the same Resume, Stop, Continue, Retry, Check Assistant, and Don't Remind Me buttons BambuStudio shows are rendered under each error &mdash; click and the matching MQTT command goes back to the printer, so you can clear a paused-print dialog from your phone instead of walking to the device. Action labels translated in all 15 interface languages. Clear stale errors directly from the UI after print cancellation or transient events. A red "Problem" counter in the status bar highlights printers with active HMS errors. Compact-mode status pips turn red for fatal/serious errors or amber for warnings. Progress bars turn amber when paused. Status sorting prioritizes printers with HMS errors at the top. Get instant push notifications for printer errors including AMS issues, nozzle problems, and more.</p></li>
             <li><strong>Success Rate Analytics</strong> <p>Track print success rates over time to identify patterns and issues.</p></li>
             <li><strong>Filament Consumption</strong> <p>Monitor material usage across all printers and prints.</p></li>
             <li><strong>Cost Analysis</strong> <p>Calculate and track printing costs for materials and electricity.</p></li>
@@ -243,6 +288,7 @@
             <li><strong>Printer File Browser</strong> <p>Browse files on your printer's internal storage. Multi-select for bulk download as ZIP or delete multiple files at once.</p></li>
             <li><strong>Bulk Printer Actions</strong> <p>Select multiple printer cards and apply bulk actions (stop, pause, resume, clear notifications, clear bed) from a floating toolbar. Select by state (printing, paused, finished, etc.) or by location for quick farm management.</p></li>
             <li><strong>Search & Filters</strong> <p>Live search bar and filter dropdowns (status + location) make large print farms easy to navigate, especially on mobile. Search matches printer name, model, location, and serial number. The status filter is reactive to WebSocket updates — when a print finishes, the card immediately drops out of the "Printing" view.</p></li>
+            <li><strong>Home Assistant Sensors on the Card</strong> <p>Bind read-only Home Assistant sensors &mdash; an enclosure door contact, a chamber thermometer, a smoke detector &mdash; to a printer and their state shows on its card, with alert conditions and notifications. Optionally <strong>hold queued prints</strong> while a sensor is alerting, so a job started from your phone waits for the door you meant to shut; it starts by itself once the sensor clears.</p></li>
             <li><strong>Maintenance Mode</strong> <p>Put a printer "out of service" without removing it. Toggle from the card's three-dot menu, the in-card amber banner, or the Edit Printer dialog; Bambuddy disconnects MQTT, drops the printer out of queue dispatch, the scheduler, model-based filament lookups, metrics, and notifications until you take it out again. The card stays visible on the dashboard with an amber wrench banner and an Exit button, so the printer never disappears from your mental map. Useful for parallel Bambuddy installs sharing the same hardware, printers under repair or awaiting parts, and temporary suspension.</p></li>
           </ul>
           <div class="shot"><img src="assets/screenshots/v2-printers.png" alt="Bambuddy Printers Dashboard - Real-time monitoring of multiple printers" loading="lazy"></div>
@@ -256,11 +302,13 @@
         </div>
         <div class="article" style="max-width: 82ch;">
           <p>Streamline your workflow with intelligent queue management and smart home integration.</p>
+          <p><strong>New: Batch Orders</strong> &mdash; an order records how many runs of each plate you want, so it knows what it still owes after a print fails. The <strong>Batches</strong> tab on the queue page shows target, done, still owed, failed and measured cost per plate, and <strong>Queue N remaining</strong> re-queues what's missing with the same printer, AMS mapping and print options.</p>
           <ul class="ticks">
             <li><strong>Background Print Dispatch</strong> <p>FTP uploads and print-start commands run in the background. Real-time progress toasts with per-job upload bars, status badges, and cancel support. UI responds immediately.</p></li>
             <li><strong>Tabbed Queue with Multi-Drag and Gantt Timeline</strong> <p>Three tabs in one page: <strong>Queue</strong> for the live order (flat list or per-printer cards with aggregate count / time / weight), <strong>History</strong> for a responsive grid of past prints with filament swatch, weight, type, user, inline failure reason, and hover-to-enlarge thumbnails, and <strong>Timeline</strong> as a true Gantt swimlane — one row per printer with bars positioned by start time and sized by duration, a live NOW marker, and a rolling 24-hour window. Drag-and-drop supports multi-select: pick N items and the whole block moves together with a +N ghost.</p></li>
             <li><strong>Multi-Printer Selection</strong> <p>Send prints to multiple printers at once with per-printer AMS mapping. Configure filament slots individually for each printer. Supports staggered starts directly from the Print dialog to avoid power spikes.</p></li>
             <li><strong>Model-Based Queue Assignment</strong> <p>Queue prints to "any printer of matching model" (e.g., any X1C) for automatic load balancing. Optionally filter by location (e.g., "any X1C in Workshop"). Scheduler assigns to the first idle printer with the required filament types loaded. Override the sliced filament colors before scheduling — the scheduler matches against your chosen colors and prefers printers with exact matches.</p></li>
+            <li><strong>Cross-Model Alternatives</strong> <p>Don't care which machine runs a job? Slice it once per printer model, select the files together and press Print: one queue item carries all of them, and the scheduler dispatches whichever model frees up first, in the priority order you set.</p></li>
             <li><strong>Prefer Lowest Remaining Filament</strong> <p>When multiple AMS spools match the same type and color, automatically select the one with the least filament remaining. Helps consume partial spools before starting new ones. Optional setting — disabled by default.</p></li>
             <li><strong>Time-Based Scheduling</strong> <p>Schedule prints with a "do not start before" time, like overnight or off-peak hours. If the printer is busy at the scheduled time, the job stays queued until it can be dispatched.</p></li>
             <li><strong>Queue Mode</strong> <p>Append prints to the back of the queue, or require manual start when you want to stage batches and release them yourself.</p></li>
@@ -273,9 +321,12 @@
             <li><strong>Post-Cooldown Shutdown</strong> <p>Safely power off printers after prints complete and cool down.</p></li>
             <li><strong>Clear Plate Confirmation</strong> <p>Require user confirmation between queued prints to ensure the build plate is cleared before the next print starts. Disable per-printer confirmations in Settings for unattended farm workflows where plates are cleared automatically.</p></li>
             <li><strong>Shortest Job First (SJF)</strong> <p>Prioritize shorter prints so more jobs complete sooner. Toggle SJF on the queue page &mdash; the scheduler picks the shortest pending job for each printer instead of FIFO. A starvation guard ensures long jobs that get skipped once are protected from being skipped again.</p></li>
-            <li><strong>Configurable Default Print Options</strong> <p>Set default values for bed levelling, flow calibration, vibration calibration, first layer inspection, and timelapse in Settings &rarr; Workflow. Every new print dialog starts with your chosen defaults, still overridable per print.</p></li>
+            <li><strong>Configurable Default Print Options</strong> <p>Set default values for bed levelling, flow calibration, nozzle offset calibration, vibration calibration, first layer inspection, and timelapse in Settings &rarr; Workflow. Bed levelling, flow and nozzle offset calibration are Off / Auto / On like in Bambu Studio &mdash; Auto lets the printer skip a calibration it did recently. Every new print dialog starts with your chosen defaults, still overridable per print.</p></li>
             <li><strong>Auto-Print G-code Injection</strong> <p>Configure custom start and end G-code snippets per printer model in Settings &rarr; Workflow for bed-clearing systems like Farmloop, SwapMod, AutoClear, and Printflow 3D. Enable per queue item &mdash; the scheduler injects snippets into a temporary copy of the 3MF before uploading, leaving original files untouched.</p></li>
             <li><strong>Preheat &amp; Heat Soak</strong> <p>Heat the bed (and the chamber, on supported printers) and hold at temperature before each queued print starts &mdash; the heat-soak engineering filaments need for adhesion and warp control. Bambuddy waits between FTP upload and print start, so the soak runs while the printer is otherwise idle. Per-print Inherit / On / Off override in the Print Options panel; per-filament chamber-target map under Settings &rarr; Workflow so PA wants 50&deg;C, ABS 45&deg;C, PETG-CF 40&deg;C, and PLA derives 0&deg;C and skips the chamber phase automatically. Hardware-aware: H-series / X2D / X1E actively heat the chamber via M141; X1C / P2S use bed radiation with a chamber-sensor wait; P1S / P1P / A1 fall back to a soak timer. On H-series / X2D / P2S the cooling/heating airduct flap auto-switches to match the resolved chamber target &mdash; ABS prints get the closed-flap recirculation they need, PLA prints get the open exhaust they need. M191 (wait-for-chamber-temp) isn't honoured by Bambu firmware, so doing this at the orchestration layer is the only place it works.</p></li>
+            <li><strong>Keep the Chamber Warm Between Prints</strong> <p>While a finished printer waits for plate-clear confirmation, Bambuddy can hold the bed hot so the chamber stays warm for the next job that needs it &mdash; on printers with a chamber sensor, the time spent warm is credited against the next heat soak.</p></li>
+            <li><strong>H2C Rack Nozzle per Filament</strong> <p>On the H2C, each filament bound for the Vortek rack gets a rack-position picker next to its AMS slot, showing the nozzle each position holds. The choice is checked again at dispatch, in case the rack was re-loaded in between.</p></li>
+            <li><strong>Finish Times and Filament on Queue Cards</strong> <p>Queue rows show the clock time each job would finish, and the filament each job will use.</p></li>
             <li><strong>Maintenance Reminders</strong> <p>Set up interval-based maintenance schedules for each printer.</p></li>
           </ul>
           <div class="shot"><img src="assets/screenshots/v2-queue.png" alt="Bambuddy Queue - Drag-and-drop print queue management" loading="lazy"></div>
@@ -289,16 +340,19 @@
           <h2>Multi-Platform Notifications</h2>
         </div>
         <div class="article" style="max-width: 82ch;">
-          <p>Stay informed about your prints wherever you are with flexible notification options.</p>
+          <p>Stay informed about your prints wherever you are, through nine notification providers: ntfy, WhatsApp, Discord, Pushover, Bark, Telegram, Email, Home Assistant and webhooks.</p>
           <ul class="ticks">
-            <li><strong>WhatsApp</strong> <p>Receive notifications directly to your WhatsApp account.</p></li>
-            <li><strong>Telegram</strong> <p>Get instant Telegram messages with print status updates.</p></li>
+            <li><strong>WhatsApp</strong> <p>Receive notifications directly to your WhatsApp account via CallMeBot.</p></li>
+            <li><strong>Telegram</strong> <p>Get instant Telegram messages with print status updates, including into a forum topic of a group with Topics enabled.</p></li>
             <li><strong>Discord</strong> <p>Post updates to your Discord server via webhooks.</p></li>
             <li><strong>Email</strong> <p>Traditional email notifications for important events.</p></li>
             <li><strong>Pushover & ntfy</strong> <p>Push notifications via Pushover or self-hosted ntfy. ntfy providers support per-event priority (Min / Low / Default / High / Urgent), so a "print failed" alert can wake the phone while a "50% complete" ping stays silent.</p></li>
-            <li><strong>Home Assistant</strong> <p>Persistent notifications in your HA dashboard. Forward to mobile via HA automations.</p></li>
+            <li><strong>Bark (iOS)</strong> <p>Open-source iPhone and iPad push via the Bark app &mdash; no account needed, and self-hostable with your own bark-server.</p></li>
+            <li><strong>Home Assistant</strong> <p>Persistent notifications in your HA dashboard, or mobile push through any HA notify service, with custom data fields and automatic photo attachment.</p></li>
+            <li><strong>Webhooks</strong> <p>Custom HTTP POST with structured event data, or Slack / Mattermost format.</p></li>
             <li><strong>Customizable Templates</strong> <p>Configure message templates with per-filament usage details, progress tracking, and quiet hours for each service. Filament data available for completed, failed, and cancelled prints.</p></li>
-            <li><strong>Print Finish Photo</strong> <p>Include camera snapshot URL in notifications when prints complete.</p></li>
+            <li><strong>Camera Snapshots</strong> <p>Finish, Plate Not Empty and AI Failure Detection notifications carry a camera snapshot &mdash; as a real attachment, an image the service fetches, or a link, depending on the channel. Each provider has its own <strong>Attach Photo</strong> switch.</p></li>
+            <li><strong>Daily Digest</strong> <p>Collect events and send one summary a day at the time you choose, instead of a message per event.</p></li>
             <li><strong>Bed Cooled Alert</strong> <p>Get notified when the print bed cools below a configurable threshold after a print completes. Know exactly when it's safe to remove your parts.</p></li>
             <li><strong>First Layer Complete Alert</strong> <p>Get notified with a camera snapshot when the first layer finishes printing. Check adhesion remotely without watching the entire print.</p></li>
             <li><strong>Queue Notifications</strong> <p>Get notified when queue jobs are waiting for filament, skipped, or fail to start. Know immediately when action is needed.</p></li>
@@ -379,7 +433,7 @@
           <p>Manage and sync filament profiles from Bambu Cloud and create custom presets.</p>
           <ul class="ticks">
             <li><strong>Bambu Cloud Sync</strong> <p>Import filament profiles directly from your Bambu Cloud account. Supports both email verification and TOTP authenticator apps for 2FA.</p></li>
-            <li><strong>Orca Cloud Sync</strong> <p>Sign in to your Orca Cloud account (the cloud OrcaSlicer 2.4.0 shipped) and pull your synced filament / process / printer profiles into Bambuddy for slicing alongside your Bambu Cloud and local presets. Four sign-in options: Google, Apple, GitHub or email + password.</p></li>
+            <li><strong>Orca Cloud Sync</strong> <p>Connect your Orca Cloud account (the cloud OrcaSlicer 2.4.0 shipped) and pull your synced filament / process / printer profiles into Bambuddy for slicing alongside your Bambu Cloud and local presets. Pairing is a device-code approval: Bambuddy shows a short code, you approve it in your Orca Cloud settings, and your password never reaches Bambuddy &mdash; it works from a LAN address or behind a reverse proxy.</p></li>
             <li><strong>Local Profiles (OrcaSlicer Import)</strong> <p>Import slicer presets from OrcaSlicer without Bambu Cloud. Supports .orca_filament, .bbscfg, .bbsflmt, .zip, and .json exports with automatic inheritance resolution.</p></li>
             <li><strong>Custom Presets</strong> <p>Create custom filament presets with temperature and flow settings.</p></li>
             <li><strong>K-Profiles (Pressure Advance)</strong> <p>Manage K-factor profiles for optimal extrusion and print quality.</p></li>
@@ -433,7 +487,7 @@
             <li><strong>GitHub Profile Backup</strong> <p>Schedule automatic backups of K-profiles, cloud profiles, settings, spool inventory, and print history to a GitHub repository.</p></li>
             <li><strong>Multi-Language Support</strong> <p>Available in English, German, and Japanese, with more languages coming.</p></li>
             <li><strong>Configurable Slicer Preference</strong> <p>Choose between Bambu Studio and OrcaSlicer as your preferred slicer. All "Open in Slicer" buttons use the correct protocol.</p></li>
-            <li><strong>Server-Side Slicing (optional sidecar)</strong> <p>Slice STL and 3MF files without a desktop slicer installed. Bring up the optional <code>slicer-api/</code> Compose stack (OrcaSlicer and/or Bambu Studio CLI behind an HTTP wrapper), turn on <em>Use Slicer API</em> in Settings &rarr; Workflow, and the <em>Slice</em> button in File Manager, Archives, and MakerWorld dispatches a background slice job whose result lands as a new <code>.gcode.3mf</code> with embedded thumbnail. Multi-plate 3MFs open a plate picker first; multi-color plates render one filament dropdown per AMS slot the print actually uses, each pre-picked against your imported / cloud / standard presets by type and colour match. The picked printer is not tied to the printer the source 3MF was authored for &mdash; a model sliced for an X1C re-slices cleanly onto an H2D (or any other model), so MakerWorld imports work whatever printer the creator used. <strong>NEW &mdash; Bambu Studio Preset Bundles:</strong> import a <code>.bbscfg</code> exported from Bambu Studio (File &rarr; Export &rarr; Export Preset Bundle) once, then pick its curated printer + process + filament triplet from a new bundle dropdown in the Slice modal. Repeat slicing skips the JSON profile re-upload entirely &mdash; the sidecar materialises the triplet from the stored bundle by name. For unsliced project files Bambuddy runs a fast preview-slice via the sidecar to discover the canonical filament list (cached per plate, instant on repeat opens). Toast tracker follows the job from queued to completed across pages so a long slice never pins the modal. Falls back to embedded settings on 3MF inputs when the CLI's <code>--load-settings</code> path misbehaves. <em>Bambu Studio is recommended</em> &mdash; OrcaSlicer 2.3.2 / 2.4.0-dev have known CLI bugs that block slicing many Bambu-authored 3MFs; Bambu Studio is a drop-in replacement until the upstream fixes land. Stays opt-in &mdash; if you don't run the sidecar, the existing "open in desktop slicer" flow is unchanged.</p></li>
+            <li><strong>Server-Side Slicing (optional sidecar)</strong> <p>Slice STL and 3MF files without a desktop slicer installed: bring up the optional <code>slicer-api/</code> Compose stack (OrcaSlicer and/or Bambu Studio CLI behind an HTTP wrapper), turn on <em>Use Slicer API</em> in Settings &rarr; Workflow, and the <em>Slice</em> button appears in File Manager, Archives, MakerWorld and the queue. <em>Bambu Studio is recommended</em> &mdash; OrcaSlicer 2.3.2 / 2.4.0-dev have known CLI bugs that block slicing many Bambu-authored 3MFs. Stays opt-in &mdash; without the sidecar, the &ldquo;open in desktop slicer&rdquo; flow is unchanged. See <a href="#integrated-slicing">Integrated Slicing</a> for everything the Slice dialog does.</p></li>
             <li><strong>Admin Default Menu Order</strong> <p>Admins can set a default sidebar navigation order and visibility for all users. Users who haven't customized their sidebar automatically inherit the admin-set layout. Toggle on from Settings to apply your current menu order as the default.</p></li>
             <li><strong>Customizable Themes</strong> <p>Mix and match styles (Classic, Glow, Vibrant), backgrounds, and accent colors for both dark and light modes.</p></li>
             <li><strong>MQTT & FTPS Communication</strong> <p>Secure, encrypted communication with your printers over LAN. Requires SD card inserted in printer for file transfers.</p></li>
