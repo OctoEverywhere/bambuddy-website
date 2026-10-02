@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Setup guide for Bambuddy Orders beta testers.">
+  <title>Bambuddy Orders beta guide</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/system.css">
+  <style>
+    /* Steps here hold whole paragraphs next to lists; keep both at body size. */
+    .step-body .article p { font-size: inherit; }
+  </style>
+  <script>document.documentElement.className += ' js';</script>
+  <script>window.__matomoSiteId = '1';</script>
+  <script src="js/cookie-consent.js" defer></script>
+</head>
+<body>
+
+  <header class="nav">
+    <div class="shell nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="Bambuddy home">
+        <img src="assets/img/logo_transparent.png" alt="Bambuddy">
+      </a>
+
+      <nav class="nav-links" id="nav-links">
+        <a href="features.html" class="nav-link">Features</a>
+        <a href="comparison.html" class="nav-link">Compare</a>
+        <a href="installation.html" class="nav-link">Install</a>
+        <a href="http://wiki.bambuddy.cool" class="nav-link" target="_blank" rel="noopener">Docs</a>
+
+        <div class="nav-more">
+          <button class="nav-more-btn" aria-expanded="false" aria-controls="nav-more-panel">
+            More
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </button>
+          <div class="nav-more-panel" id="nav-more-panel">
+            <a href="spoolbuddy.html">SpoolBuddy</a>
+            <a href="https://forum.bambuddy.cool" target="_blank" rel="noopener">Forum</a>
+            <a href="https://discord.gg/aFS3ZfScHM" target="_blank" rel="noopener">Discord</a>
+            <a href="press.html">Press coverage</a>
+            <a href="reviews.html">User reviews</a>
+            <a href="sponsors.html">Sponsor</a>
+          </div>
+        </div>
+
+        <span class="nav-sep" aria-hidden="true"></span>
+
+        <a href="https://get.bambuddy.cool/" class="nav-pill">Appliance</a>
+        <a href="business.html" class="nav-pill nav-pill-signal">Business</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="https://github.com/maziggy/bambuddy" class="nav-icon" target="_blank" rel="noopener" aria-label="Bambuddy on GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+          </svg>
+        </a>
+        <a href="https://demo.bambuddy.cool" class="btn btn-primary" target="_blank" rel="noopener">Live demo</a>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22" aria-hidden="true">
+            <line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-head">
+      <div class="shell">
+        <p class="label label-signal">Beta</p>
+        <h1>Bambuddy Orders: tester guide</h1>
+        <p class="prose">
+          Thank you for testing. Bambuddy Orders takes paid orders from your Shopify store,
+          sends them to Bambuddy's print queue, and tracks them until you ship them, with
+          tracking, from the same screen. Setup takes about 30 minutes; most of it is the
+          Shopify part (step 3).
+        </p>
+      </div>
+    </section>
+
+    <section class="band-tight">
+      <div class="shell">
+        <nav class="toc" aria-label="On this page">
+          <a href="#need">What you need</a>
+          <a href="#setup">Setup</a>
+          <a href="#daily">Daily use</a>
+          <a href="#report">Reporting a problem</a>
+          <a href="#limits">Known limits</a>
+        </nav>
+      </div>
+    </section>
+
+    <section class="band-tight" id="need">
+      <div class="shell">
+        <div class="masthead masthead-sub">
+          <h2>What you need</h2>
+        </div>
+        <div class="article" style="max-width: 82ch;">
+          <ul>
+            <li><strong>Bambuddy, latest daily build</strong> (<code>ghcr.io/maziggy/bambuddy:daily</code>). Stable 1.2.5.x and older dailies lack "Sign in with Bambuddy" and the notification link. Update Bambuddy first; Settings &rarr; Bambuddy &rarr; Test in Orders tells you if it is too old.</li>
+            <li><strong>Docker</strong> with Docker Compose v2, on a machine that is always on. The one running Bambuddy is fine. 64-bit PCs (amd64) and Raspberry Pi 4/5 (arm64) both work.</li>
+            <li>A <strong>Shopify store</strong> where you are the owner, or a staff member allowed to develop apps.</li>
+            <li>A <strong>GitHub account</strong>, to pull the image.</li>
+            <li>Your <strong>beta licence key</strong>. We send it on Discord.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="band-tight" id="setup">
+      <div class="shell">
+        <div class="masthead masthead-sub">
+          <h2>Setup</h2>
+        </div>
+        <div class="steps" style="max-width: 82ch;">
+          <div class="step">
+            <div class="step-body">
+              <h3>Get access to the image</h3>
+              <div class="article">
+                <p>The image is private during the beta.</p>
+                <ol>
+                  <li>Send us your GitHub username on Discord. We give it read access to the image.</li>
+                  <li>On GitHub, create a token: Settings &rarr; Developer settings &rarr; Personal access tokens &rarr; <strong>Tokens (classic)</strong> &rarr; Generate new token (classic). Tick only <strong>read:packages</strong> and copy the token. A fine-grained token doesn't work for container images.</li>
+                  <li>On the machine that will run Orders, log in with it:</li>
+                </ol>
+              </div>
+              <div class="code-block">
+              <div class="code-header"><span class="code-lang">bash</span><button class="code-copy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>Copy</button></div>
+              <pre><code>echo &lt;your token&gt; | docker login ghcr.io -u &lt;your GitHub username&gt; --password-stdin</code></pre>
+            </div>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-body">
+              <h3>Start Bambuddy Orders</h3>
+              <div class="article">
+                <p>Make a folder, for example <code>~/bambuddy-orders</code>, and save this in it as <code>docker-compose.yml</code>. If <code>id</code> shows numbers other than 1000 for your user and group, put yours into <code>PUID</code> and <code>PGID</code>.</p>
+              </div>
+              <div class="code-block">
+              <div class="code-header"><span class="code-lang">docker-compose.yml</span><button class="code-copy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>Copy</button></div>
+              <pre><code>services:
+  bambuddy-orders:
+    image: ghcr.io/maziggy/bambuddy-orders:beta
+    container_name: bambuddy-orders
+    ports:
+      - "8090:8090"
+    environment:
+      # Owner of ./data on the host (run `id` to find yours).
+      - PUID=1000
+      - PGID=1000
+    volumes:
+      - ./data:/data
+    restart: unless-stopped</code></pre>
+            </div>
+              <div class="article"><p>Start it:</p></div>
+              <div class="code-block">
+              <div class="code-header"><span class="code-lang">bash</span><button class="code-copy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>Copy</button></div>
+              <pre><code>docker compose up -d</code></pre>
+            </div>
+              <div class="article">
+                <p>Open <code>http://&lt;this machine&gt;:8090</code>. The setup page asks for:</p>
+                <ul>
+                  <li>an <strong>admin password</strong> (at least 10 characters). It always works, even when Bambuddy is down;</li>
+                  <li>the <strong>address of this app</strong>, as your browser reaches it, e.g. <code>http://192.168.1.20:8090</code>;</li>
+                  <li>the <strong>Bambuddy address</strong>, e.g. <code>http://192.168.1.20:8000</code>;</li>
+                  <li>a <strong>Bambuddy API key</strong>: in Bambuddy, Settings &rarr; API Keys &rarr; create a key with <strong>Read Status</strong>, <strong>Manage Queue</strong> and <strong>Send notifications</strong> ticked. An existing key can't be edited there, so make a new one;</li>
+                  <li>optional, for "Sign in with Bambuddy": in Bambuddy, Settings &rarr; API Keys &rarr; Connected Apps &rarr; add an app with the callback address Orders shows you, then paste its client ID and secret. Bambuddy's own login must be on for this.</li>
+                </ul>
+                <p><strong>Updating later:</strong> when a new version is out, the Overview says so and Settings &rarr; Support shows what changed. In the folder with your compose file, run <code>docker compose pull &amp;&amp; docker compose up -d</code>. Not <code>restart</code>: that keeps the old image. Your data stays in <code>./data</code>.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-body">
+              <h3>Connect Shopify</h3>
+              <div class="article">
+                <p>Shopify no longer lets you create a "custom app" in the store admin (since 1 January 2026). You create one in Shopify's <strong>Dev Dashboard</strong> instead. Orders talks to Shopify with that app's client ID and secret. The secret stays on your machine and never reaches us.</p>
+                <ol>
+                  <li>Open <a href="https://dev.shopify.com/dashboard" target="_blank" rel="noopener">dev.shopify.com/dashboard</a> and log in <strong>with the account that owns your store</strong>.</li>
+                  <li><strong>Apps</strong> &rarr; <strong>Create app</strong> &rarr; <strong>Start from Dev Dashboard</strong> &rarr; name it e.g. "Bambuddy Orders" &rarr; <strong>Create</strong>.</li>
+                  <li>Open the app's <strong>Versions</strong> page. Leave the App URL at its default, choose the newest Webhooks API version, and add the Admin API scopes <code>read_products</code>, <code>read_orders</code>, <code>read_merchant_managed_fulfillment_orders</code> and <code>write_merchant_managed_fulfillment_orders</code>. Then <strong>Release</strong>.</li>
+                  <li>On the app's overview, <strong>Install app</strong> (Installs card) &rarr; pick <strong>your store</strong> &rarr; <strong>Install</strong>.</li>
+                  <li>Open the app's <strong>Settings</strong> and copy the <strong>Client ID</strong> and <strong>Client secret</strong>.</li>
+                  <li>In Orders, go to <strong>Settings &rarr; Shop</strong>. Enter your <code>&hellip;myshopify.com</code> address, the client ID and the secret, then press <strong>Save and test</strong>. It should say "Connected to &lt;your shop&gt;".</li>
+                </ol>
+              </div>
+              <div class="alert alert-warning">
+                <span class="alert-icon" aria-hidden="true">!</span>
+                <div><strong>Please report exactly what happens at step 6, even when it works.</strong> Shopify only hands out a token when the app and the store belong to the same Shopify organisation, and we have only confirmed that with a development store. If the test fails with an error about the client or the grant, your store probably sits in another organisation (common when an agency or a partner account created it). Tell us, and send the error text.</div>
+              </div>
+              <div class="article">
+                <p>Orders only reads products and paid orders, and marks orders fulfilled when you ship them. It stores no buyer names, addresses or email addresses: only the order number, items, total and ship-to country.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-body">
+              <h3>Activate your licence</h3>
+              <div class="article">
+                <p><strong>Settings &rarr; Licence</strong> &rarr; paste the key &rarr; <strong>Activate</strong>.</p>
+                <p>Until a licence is active, Orders takes in no orders, and a red line on every page tells you why. The key works on one install. To move to another machine, use <strong>Remove from this install</strong> first.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-body">
+              <h3>Set up your products</h3>
+              <div class="article">
+                <p><strong>Products</strong> lists your Shopify variants. For each one you sell, choose the print file from Bambuddy's library, the plate, and how many units a plate holds (or how many plates a unit needs). Files named like the SKU are suggested automatically.</p>
+                <p>Personalised items, and items without a setup, always stop in <strong>To do</strong> for you.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="band-tight" id="daily">
+      <div class="shell">
+        <div class="masthead masthead-sub">
+          <h2>Daily use</h2>
+        </div>
+        <div class="article" style="max-width: 82ch;">
+          <ul>
+            <li><strong>Overview</strong>: what needs you, what's printing, what's ready to pack.</li>
+            <li><strong>To do</strong>: orders that need a decision (not set up, personalised, print failed, Bambuddy error). Each has its fix right there.</li>
+            <li><strong>In production</strong>: live print progress from Bambuddy.</li>
+            <li><strong>To pack</strong>: printed orders with a pick list. Tick them, <strong>Ship</strong>, choose the carrier, enter tracking numbers. Shopify marks them fulfilled and, if you leave "notify" on, emails the buyer.</li>
+            <li><strong>Shipped</strong>: the last shipments with tracking links.</li>
+          </ul>
+          <h3>Useful settings</h3>
+          <ul>
+            <li><strong>Order processing &rarr; Send paid orders automatically.</strong> Off means every order waits in To do until you press Send. We suggest keeping it off for your first days.</li>
+            <li><strong>Order processing &rarr; Start print jobs by hand in Bambuddy.</strong> On means jobs land in Bambuddy's queue staged and wait until someone starts them there. Off (the default) starts them as soon as a printer is free.</li>
+            <li><strong>Order processing &rarr; Handling time.</strong> Working days until an order should ship. Orders show their ship-by day and turn red when late. The default is 3; 0 switches it off.</li>
+            <li><strong>Notifications.</strong> Which events reach your phone through Bambuddy's channels. In Bambuddy, switch on <strong>Messages from connected apps</strong> for those channels.</li>
+          </ul>
+          <p>To open Orders inside Bambuddy's sidebar, add it in Bambuddy under Settings &rarr; <strong>Sidebar Links</strong> &rarr; External links, with the Orders address. Open Bambuddy by the <strong>same address you entered in Orders</strong>: for safety, Orders refuses to be shown inside any other site, so a different hostname or IP leaves the frame empty.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="band-tight" id="report">
+      <div class="shell">
+        <div class="masthead masthead-sub">
+          <h2>Reporting a problem</h2>
+        </div>
+        <div class="article" style="max-width: 82ch;">
+          <p>On Discord, tell us:</p>
+          <ol>
+            <li>what you did and what you expected;</li>
+            <li>what happened instead (a screenshot helps);</li>
+            <li><strong>Settings &rarr; Support &rarr; Download diagnostics</strong>, attached. The file holds your setup and Orders' recent log. It contains no passwords, keys or buyer data. Have a look before you send it.</li>
+          </ol>
+          <p>Things we especially want to hear about:</p>
+          <ul>
+            <li>the <strong>Shopify connection</strong> (step 3.6), and anything confusing in that setup;</li>
+            <li>an order that went to the <strong>wrong printer or file</strong>, or was sent <strong>twice</strong>;</li>
+            <li>a <strong>shipment</strong> that didn't show up as fulfilled in Shopify;</li>
+            <li>anything you still do by hand, outside Orders, every day.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="band-tight" id="limits">
+      <div class="shell">
+        <div class="masthead masthead-sub">
+          <h2>Known limits of the beta</h2>
+        </div>
+        <div class="article" style="max-width: 82ch;">
+          <ul>
+            <li>Shopify only. Etsy comes later.</li>
+            <li>One batch per print file per order in Bambuddy's queue. An order with three different items shows up as three groups there; Orders shows them together.</li>
+            <li>New orders arrive within about a minute, not instantly.</li>
+            <li>A whole order ships at once. Partial shipments are done in Shopify.</li>
+            <li>If the licence server can't be reached, Orders keeps working for 7 days.</li>
+          </ul>
+          <p>Lost the admin password?</p>
+        </div>
+        <div style="max-width: 82ch; margin-top: var(--s4);">
+          <div class="code-block">
+              <div class="code-header"><span class="code-lang">bash</span><button class="code-copy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>Copy</button></div>
+              <pre><code>docker exec -it bambuddy-orders reset-admin-password</code></pre>
+            </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="shell">
+      <div class="footer-sponsor">
+        <div>
+          <p class="label" style="margin-bottom: 0.6rem;">Backed by our corporate sponsors</p>
+          <a href="https://northpole3dprinting.com/" target="_blank" rel="noopener">
+            <img src="img/sponsors/northpole-3d-printing.jpg" alt="North Pole 3D Printing" loading="lazy">
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" aria-label="Bambuddy home">
+            <img src="assets/img/logo_transparent.png" alt="Bambuddy">
+          </a>
+          <p>Self-hosted command center for Bambu Lab 3D printers.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Product</h4>
+          <a href="features.html">Features</a>
+          <a href="https://get.bambuddy.cool/">Appliance</a>
+          <a href="spoolbuddy.html">SpoolBuddy</a>
+          <a href="comparison.html">Compare</a>
+          <a href="installation.html">Installation</a>
+          <a href="http://wiki.bambuddy.cool" target="_blank" rel="noopener">Documentation</a>
+        </div>
+        <div class="footer-col">
+          <h4>Evidence</h4>
+          <a href="press.html">Press coverage</a>
+          <a href="reviews.html">User reviews</a>
+          <a href="https://demo.bambuddy.cool" target="_blank" rel="noopener">Live demo</a>
+          <a href="https://github.com/maziggy/bambuddy/releases" target="_blank" rel="noopener">Releases</a>
+        </div>
+        <div class="footer-col">
+          <h4>Community</h4>
+          <a href="https://forum.bambuddy.cool" target="_blank" rel="noopener">Forum</a>
+          <a href="https://discord.gg/aFS3ZfScHM" target="_blank" rel="noopener">Discord</a>
+          <a href="https://github.com/maziggy/bambuddy" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://github.com/maziggy/bambuddy/issues" target="_blank" rel="noopener">Issues</a>
+          <a href="http://wiki.bambuddy.cool/community/" target="_blank" rel="noopener">Community add-ons</a>
+        </div>
+        <div class="footer-col">
+          <h4>Business</h4>
+          <a href="business.html">For business</a>
+          <a href="sponsors.html">Sponsor Bambuddy</a>
+          <a href="https://github.com/sponsors/maziggy" target="_blank" rel="noopener">GitHub Sponsors</a>
+          <a href="mailto:martin@bambuddy.cool">martin@bambuddy.cool</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>
+          Released under the AGPL-3.0 License. Made with care for the 3D printing community.<br>
+          &copy; 2026 Bambuddy. Not affiliated with Bambu Lab.
+        </p>
+        <div class="footer-legal">
+          <a href="legal-notice.html">Legal notice</a>
+          <a href="privacy-policy.html">Privacy policy</a>
+          <a href="https://get.bambuddy.cool/terms.html">Terms</a>
+          <a href="https://get.bambuddy.cool/refund-policy.html">Refund policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/system.js" defer></script>
+
+</body>
+</html>
