@@ -166,7 +166,12 @@
         <p>A Bambuddy Appliance registers with our licence service and then reports roughly once a day. It sends only: a device identifier derived from the board's serial number, the batch identifier of the image, the licence key, the hardware model and the Appliance software version. Once an hour it also checks its subscription status; that request carries only the device identifier and a device token, and we do not log it.</p>
         <p><strong>No print data, files, printer data, user data or credentials are ever transmitted.</strong> Your IP address is not stored in the clear: we keep only a salted, truncated hash of it, and only to detect one licence key being used on several devices.</p>
         <p>Legal basis: Art. 6(1)(b) GDPR (performance of the contract) and Art. 6(1)(f) GDPR (preventing misuse of licence keys). The registration is kept while the subscription and the device registration exist; ask us at <a href="mailto:support@bambuddy.cool">support@bambuddy.cool</a> to delete it after the subscription has ended.</p>
-        <h2>10. Third-Party Services</h2>
+        <h2>10. Bambuddy Orders Licence Check</h2>
+        <p>Bambuddy Orders runs on your own server. When you activate it, and then roughly once a day, it contacts our licence service. It sends only: a random installation identifier, the licence key (once, at activation; it is not stored in your installation), afterwards an installation token issued by the licence service, the Orders version and the domain of the connected shop. We use the shop domain to match support requests to your licence and to detect a licence being used for shops other than your own.</p>
+        <p><strong>No orders, buyer data, print data or credentials for your shop or for Bambuddy are ever transmitted.</strong> Your shop credentials stay encrypted in your installation. Order data in your installation is processed by you, not by us. Bambuddy Orders stores neither the names nor the email or postal addresses of your buyers.</p>
+        <p>If you buy a Bambuddy Orders subscription, section 8 applies accordingly.</p>
+        <p>Legal basis: Art. 6(1)(b) GDPR (performance of the contract) and Art. 6(1)(f) GDPR (preventing misuse of licence keys). The installation record is kept while the licence exists; ask us at <a href="mailto:support@bambuddy.cool">support@bambuddy.cool</a> to delete it after the licence has ended.</p>
+        <h2>11. Third-Party Services</h2>
         <h3>GitHub</h3>
         <p>Our website links to GitHub (github.com) for source code, issues, and releases. When you follow these links, GitHub's privacy policy applies.</p>
         <h3>Discord</h3>
@@ -175,7 +180,7 @@
         <p>Our website links to Ko-fi for voluntary donations. When you follow these links, Ko-fi's privacy policy applies.</p>
         <h3>Visitor Badge</h3>
         <p>This website uses a visitor badge image from api.visitorbadge.io to display a visitor counter. When this image loads, your IP address is transmitted to this service.</p>
-        <h2>11. Your Rights</h2>
+        <h2>12. Your Rights</h2>
         <p>Under the GDPR, you have the following rights regarding your personal data:</p>
         <ul>
         <li><strong>Right of access</strong> (Art. 15 GDPR) - You can request information about whether and which personal data we process about you.</li>
@@ -193,11 +198,11 @@
         10969 Berlin<br>
         <a href="https://www.datenschutz-berlin.de" target="_blank" rel="noopener">www.datenschutz-berlin.de</a>
         </p>
-        <h2>12. Data Security</h2>
+        <h2>13. Data Security</h2>
         <p>This website uses TLS (HTTPS) encryption for secure data transmission. We take appropriate technical and organizational measures to protect your data against unauthorized access, loss, or manipulation.</p>
-        <h2>13. Changes to This Policy</h2>
+        <h2>14. Changes to This Policy</h2>
         <p>We may update this privacy policy from time to time. The current version is always available on this page.</p>
-        <p class="svc-note">Last updated: September 29, 2026</p>
+        <p class="svc-note">Last updated: October 3, 2026</p>
         </div>
       </div>
     </section>
