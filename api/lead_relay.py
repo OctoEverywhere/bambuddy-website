@@ -60,7 +60,7 @@ MATOMO_GOAL_ID = os.environ.get("MATOMO_GOAL_ID", "1")
 # The page a lead came from, resolved from an allow-list rather than echoing the
 # submitted "context" into an outbound URL.
 CONTEXT_PAGE_URLS = {
-    "appliance": "https://bambuddy.cool/appliance.html",
+    "appliance": "https://get.bambuddy.cool/",
     "business": "https://bambuddy.cool/business.html",
 }
 DEFAULT_PAGE_URL = "https://bambuddy.cool/"

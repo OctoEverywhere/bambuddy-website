@@ -42,14 +42,13 @@
    * answers are lost — the lead itself still arrives, exactly as before.
    */
   var EXTRA_FIELDS = [
-    { name: 'use', label: 'Business or personal' },
+    { name: 'use', label: 'Business or institution' },
     { name: 'trigger', label: 'What prompted this' }
   ];
 
   var LABELS = {
     business: 'Business — part of how they earn',
     institution: 'A school, university or makerspace',
-    personal: 'Personal / hobby',
     outgrew: 'Outgrew how they track things today',
     incident: 'Something went wrong; wants cover',
     cloud: 'Needs to keep files off the cloud',

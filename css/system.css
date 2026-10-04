@@ -1359,7 +1359,7 @@ svg.alert-icon,
 
 .compare-table {
   width: 100%;
-  min-width: 720px;
+  min-width: 1180px;
   border-collapse: collapse;
   font-size: var(--t-sm);
 }
@@ -1402,6 +1402,41 @@ svg.alert-icon,
 
 .compare-table td {
   color: var(--dim);
+}
+
+/* Feature names stay in view while the seven product columns scroll
+   sideways. The cells need an opaque ground or the columns show through. */
+.compare-table th:first-child,
+.compare-table td:first-child {
+  position: sticky;
+  left: 0;
+  width: 15rem;
+  min-width: 11rem;
+  background: var(--ground);
+  border-right: 1px solid var(--rule);
+}
+
+.compare-table thead th:first-child {
+  z-index: 2;
+  background: var(--raised-2);
+}
+
+@media (max-width: 599px) {
+  .compare-table th:first-child,
+  .compare-table td:first-child {
+    width: 8.5rem;
+    min-width: 8.5rem;
+  }
+}
+
+.compare-table tbody tr:hover td:first-child {
+  background: var(--raised);
+}
+
+.compare-table .row-group td:first-child {
+  position: static;
+  background: var(--raised);
+  border-right: 0;
 }
 
 /* Category divider rows. */
@@ -1447,6 +1482,13 @@ svg.alert-icon,
   flex-wrap: wrap;
   gap: var(--s2) var(--s5);
   margin-top: var(--s4);
+  font-size: var(--t-sm);
+  color: var(--dim);
+}
+
+.compare-note {
+  margin-top: var(--s3);
+  max-width: 82ch;
   font-size: var(--t-sm);
   color: var(--dim);
 }

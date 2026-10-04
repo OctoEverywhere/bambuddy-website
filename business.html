@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Priority support, commercial licensing and custom development for print farms and teams running Bambuddy. From October 2026.">
+  <meta name="description" content="Priority support, commercial licensing and custom development for print farms and teams running Bambuddy.">
 
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://bambuddy.cool/business.html">
   <meta property="og:title" content="Bambuddy for business - support, licensing and custom work">
-  <meta property="og:description" content="Priority support, commercial licensing and custom development for print farms and teams running Bambuddy. From October 2026.">
+  <meta property="og:description" content="Priority support, commercial licensing and custom development for print farms and teams running Bambuddy.">
   <meta property="og:image" content="https://bambuddy.cool/assets/screenshots/printers.png">
   <meta property="og:site_name" content="Bambuddy">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Bambuddy for business - support, licensing and custom work">
-  <meta name="twitter:description" content="Priority support, commercial licensing and custom development for print farms and teams running Bambuddy. From October 2026.">
+  <meta name="twitter:description" content="Priority support, commercial licensing and custom development for print farms and teams running Bambuddy.">
   <meta name="twitter:image" content="https://bambuddy.cool/assets/screenshots/printers.png">
 
   <title>Bambuddy for business - support, licensing and custom work</title>
@@ -62,7 +62,7 @@
 
         <span class="nav-sep" aria-hidden="true"></span>
 
-        <a href="appliance.html" class="nav-pill">Appliance</a>
+        <a href="https://get.bambuddy.cool/" class="nav-pill">Appliance</a>
         <a href="business.html" class="nav-pill nav-pill-signal" aria-current="page">Business</a>
       </nav>
 
@@ -95,29 +95,10 @@
           support contract.
         </p>
         <p class="hero-facts" style="margin-top: 1.5rem;">
-          <span>Starts October 2026</span>
+          <span>Available now</span>
           <span>No seat or printer fees</span>
           <span>Replies from the maintainer</span>
         </p>
-      </div>
-    </section>
-
-    <!-- Said before anything else is asked for. Every enquiry answered so far
-         has had to break this news in the reply, which turns an interested
-         prospect into a disappointed one. On the page it does the opposite: it
-         qualifies out anyone who needs help this week, and gives everyone else a
-         reason to get in the queue now. -->
-    <section class="band-tight">
-      <div class="shell">
-        <div class="alert alert-info" style="align-items: center;">
-          <span class="alert-icon" aria-hidden="true">&#9658;</span>
-          <div>
-            <strong>Commercial support starts in October 2026.</strong> Enquiries are open
-            now and being answered in order &mdash; we scope it with you over the summer,
-            prepare the contract in September, and the service starts in October. If you need
-            paid support before then, we would rather tell you now than waste your time.
-          </div>
-        </div>
       </div>
     </section>
 
@@ -162,7 +143,7 @@
               <li>Your bugs triaged first</li>
               <li>Help with upgrades before you run them in production</li>
             </ul>
-            <p class="svc-note">Annual or per-incident, invoiced with VAT. From October 2026.</p>
+            <p class="svc-note">Annual or per-incident, invoiced with VAT.</p>
           </article>
 
           <article class="svc-card">
@@ -192,7 +173,7 @@
               <li>Sponsored feature development</li>
               <li>PostgreSQL and multi-site setups</li>
             </ul>
-            <p class="svc-note">Scoped and quoted per project. Available from October 2026.</p>
+            <p class="svc-note">Scoped and quoted per project.</p>
           </article>
         </div>
       </div>
@@ -362,7 +343,6 @@
                 <option value="" disabled selected>Select one&hellip;</option>
                 <option value="business">Yes &mdash; it is part of how we earn</option>
                 <option value="institution">A school, university or makerspace</option>
-                <option value="personal">No &mdash; personal or hobby</option>
               </select>
             </div>
             <div class="form-group">
@@ -434,6 +414,42 @@
           Just want to support the project instead?
           <a href="sponsors.html?from=business-page" class="link">See the sponsor tiers</a>.
         </p>
+
+        <hr style="margin: 2.5rem 0 1.75rem; border: 0; border-top: 1px solid var(--rule);">
+
+        <div class="panel" style="max-width: 720px;">
+          <h3>Selling hardware, and want to include the appliance?</h3>
+          <p>
+            We do not sell hardware and we are not looking for resellers. But if you already
+            build and sell Raspberry&nbsp;Pi kits, shipping one with a prepaid subscription is
+            something we are open to. The <a href="https://get.bambuddy.cool/" class="link">Bambuddy Appliance</a> page
+            has the details; tell us about your shop.
+          </p>
+          <div style="margin-top: 1.25rem;">
+            <form class="lead-form" data-context="business" novalidate>
+              <input type="hidden" name="interest" value="reseller">
+              <div class="form-group">
+                <label class="form-label" for="res-region">Where is your shop?</label>
+                <input class="form-input" id="res-region" name="region" type="text" required autocomplete="country-name" placeholder="Country / region">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="res-email">Your email</label>
+                <input class="form-input" id="res-email" name="email" type="email" required autocomplete="email" placeholder="you@yourshop.com">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="res-message">Tell us about your shop <span class="form-hint">(optional)</span></label>
+                <textarea class="form-textarea" id="res-message" name="message" placeholder="What you sell, roughly how many kits a month you'd expect, and anything else useful."></textarea>
+              </div>
+              <div class="lead-hp" aria-hidden="true">
+                <label>Do not fill this in <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+              </div>
+              <button type="submit" class="btn btn-ghost lead-submit-btn" data-label="Start a conversation">
+                <span class="lead-btn-label">Start a conversation</span>
+              </button>
+              <p class="lead-status" role="status" aria-live="polite"></p>
+            </form>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -461,7 +477,7 @@
         <div class="footer-col">
           <h4>Product</h4>
           <a href="features.html">Features</a>
-          <a href="appliance.html">Appliance</a>
+          <a href="https://get.bambuddy.cool/">Appliance</a>
           <a href="spoolbuddy.html">SpoolBuddy</a>
           <a href="comparison.html">Compare</a>
           <a href="installation.html">Installation</a>
@@ -502,6 +518,8 @@
         <div class="footer-legal">
           <a href="legal-notice.html">Legal notice</a>
           <a href="privacy-policy.html">Privacy policy</a>
+          <a href="https://get.bambuddy.cool/terms.html">Terms</a>
+          <a href="https://get.bambuddy.cool/refund-policy.html">Refund policy</a>
         </div>
       </div>
     </div>
